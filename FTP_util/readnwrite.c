@@ -8,15 +8,13 @@ readn(int fd, void* vptr, size_t n)
     char* ptr = vptr;
     nleft = n;
 
-    while(nleft > 0)
-    {
+    while(nleft > 0){
       nread = read(fd, ptr, nleft);
 
-      if(nread == -1)
-      {
+      if(nread == -1){
         return -1;
-      }else if(nread == 0)
-      {
+      }
+      else if(nread == 0){
         break;
       }
 
@@ -36,8 +34,7 @@ writen(int fd, const void* vptr, size_t n)
 
   while (nleft > 0) {
     nwritten = write(fd, ptr, nleft);
-    if(nwritten == -1)
-    {
+    if(nwritten == -1){
       return -1;
     }
 
